@@ -7,7 +7,7 @@ import GoogleMapView from './Component/Home/GoogleMapView';
 import GlobalApi from '@/Shared/GlobalApi';
 import { UserLocationProvider, useUserLocation } from './../context/UserLocationContext';
 import BusinessList from './Component/Home/BusinessList';
-import { BusinessContext } from '@/context/BusinessContext';
+import  BusinessContext  from '@/context/BusinessContext';
 import ForLoading from './Component/Home/ForLoading';
 import './globals.css'
 
