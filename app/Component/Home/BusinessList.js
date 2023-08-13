@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react';
 import BusinessItem from './BusinessItem';
 import '../../globals.css';
-import { useBusinessContext } from '../../../context/BusinessContext';
+import { useBusinessContext } from '@/context/BusinessContext';
 
 function BusinessList({ businessList }) {
   const sortedBusinessList = [...businessList].sort((a, b) => b.rating - a.rating);
