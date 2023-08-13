@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useBusinessContext } from '../../../context/BusinessContext';
 import { UserLocationProvider, useUserLocation } from '../../../context/UserLocationContext';
+import { useBusinessContext } from '../../../context/BusinessContext';
+
 
 function BusinessItem({ business }) {
   const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY; // Use process.env to access your API key
@@ -42,7 +43,7 @@ function BusinessItem({ business }) {
     const distance = earthRadius * c;
 
     setDistance(distance.toFixed(1));
-    return distance.toFixed(2); // Return the distance with 2 decimal places
+    return distance.toFixed(2); // Return the distance with 2 decimal places added some comments
   };
 
   return (
