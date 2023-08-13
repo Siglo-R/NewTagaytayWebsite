@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { UserLocationProvider, useUserLocation } from '../../../context/UserLocationContext';
-import { useBusinessContext } from '../../../context/BusinessContext';
+import { useBusinessContext } from '@/context/BusinessContext';
 
 
 function BusinessItem({ business }) {
