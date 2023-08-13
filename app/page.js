@@ -5,7 +5,7 @@ import RangeSelect from './Component/Home/RangeSelect';
 import SelectRating from './Component/Home/SelectRating'; // Import the SelectRating component
 import GoogleMapView from './Component/Home/GoogleMapView';
 import GlobalApi from '@/Shared/GlobalApi';
-import { UserLocationProvider, useUserLocation } from './../context/UserLocationContext';
+import { UserLocationProvider, useUserLocation } from '@/context/UserLocationContext';
 import BusinessList from './Component/Home/BusinessList';
 import { useBusinessContext } from '@/context/BusinessContext'; 
 import ForLoading from './Component/Home/ForLoading';
@@ -14,7 +14,7 @@ import './globals.css'
 function DashboardContent() {
   const { setSelectedBusiness } = useBusinessContext(); // Corrected usage of useBusinessContext
   const [category, setCategory] = useState('places in tagaytay');
-  const [radius, setRadius] = useState(25);
+  const [radius, setRadius] = useState(25); 
   const [businessList, setBusinessList] = useState([]);
   const [selectedRatings, setSelectedRatings] = useState([]); // Add state for selected ratings
   const { userLocation } = useUserLocation();
@@ -53,7 +53,6 @@ function DashboardContent() {
         <div className='flex flex-col'>
           <CategoryList onCategoryChange={(value) => setCategory(value)} />
           <RangeSelect onRadiusChange={(value) => setRadius(value)} />
-          {/* <SelectRating onSelectRatings={(ratings) => setSelectedRatings(ratings)} /> Pass the callback */}
         </div>
       </div>
       <div className='row-start-2 col-start-3 col-span-3'>
