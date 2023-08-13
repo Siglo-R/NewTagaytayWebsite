@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Image from 'next/image';
-import BusinessContext from '../../../context/BusinessContext';
+import { useBusinessContext } from '../../../context/BusinessContext';
 import { UserLocationProvider, useUserLocation } from '../../../context/UserLocationContext';
 
 function BusinessItem({ business }) {
   const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY; // Use process.env to access your API key
   const photo_ref = business?.photos ? business?.photos[0]?.photo_reference : '';
-  const { setSelectedBusiness } = useContext(BusinessContext);
+  const { setSelectedBusiness } = useBusinessContext();
   const { userLocation } = useUserLocation();
   const handleItemClick = () => {
     console.log('Clicked on BusinessItem:', business.name);

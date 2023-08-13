@@ -1,6 +1,22 @@
-import { createContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-export const BusinessContext = createContext({
+const BusinessContext = createContext({
   selectedBusiness: null,
-  setSelectedBusiness: () => {}, 
+  setSelectedBusiness: () => {},
 });
+
+const BusinessContextProvider = ({ children }) => {
+  const [selectedBusiness, setSelectedBusiness] = useState(null);
+
+  return (
+    <BusinessContext.Provider value={{ selectedBusiness, setSelectedBusiness }}>
+      {children}
+    </BusinessContext.Provider>
+  );
+};
+
+const useBusinessContext = () => {
+  return useContext(BusinessContext);
+};
+
+export { BusinessContextProvider, useBusinessContext };

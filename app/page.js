@@ -7,12 +7,12 @@ import GoogleMapView from './Component/Home/GoogleMapView';
 import GlobalApi from '@/Shared/GlobalApi';
 import { UserLocationProvider, useUserLocation } from './../context/UserLocationContext';
 import BusinessList from './Component/Home/BusinessList';
-import  BusinessContext  from '@/context/BusinessContext';
+import { useBusinessContext } from '@/context/BusinessContext'; 
 import ForLoading from './Component/Home/ForLoading';
 import './globals.css'
 
 function DashboardContent() {
-  const { setSelectedBusiness } = useContext(BusinessContext);
+  const { setSelectedBusiness } = useBusinessContext(); // Corrected usage of useBusinessContext
   const [category, setCategory] = useState('places in tagaytay');
   const [radius, setRadius] = useState(25);
   const [businessList, setBusinessList] = useState([]);

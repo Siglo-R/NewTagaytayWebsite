@@ -1,6 +1,6 @@
 import { MarkerF, OverlayView } from '@react-google-maps/api';
 import React, { useContext, useEffect, useState } from 'react';
-import  BusinessContext  from '../../../context/BusinessContext';
+import  { useBusinessContext }  from '../../../context/BusinessContext';
 import Image from 'next/image';
 import { UserLocationProvider,useUserLocation } from '../../../context/UserLocationContext'; 
 
@@ -8,7 +8,7 @@ import { UserLocationProvider,useUserLocation } from '../../../context/UserLocat
 
 function BusinessMarker({ business }) {
     const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
-    const { selectedBusiness, setSelectedBusiness } = useContext(BusinessContext);
+    const { selectedBusiness, setSelectedBusiness } = useBusinessContext();
     const [isHovered, setIsHovered] = useState(false);
     const { userLocation } = useUserLocation();
     const[distance,setDistance]=useState();
