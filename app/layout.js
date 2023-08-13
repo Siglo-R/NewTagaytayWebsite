@@ -2,8 +2,8 @@
 import React from 'react';
 import HeaderBar from './Component/HeaderBar';
 import { Inter } from 'next/font/google';
-import { UserLocationProvider } from '../context/UserLocationContext';
-import { BusinessContext, BusinessContextProvider } from '../context/BusinessContext'; // Updated import
+import { UserLocationProvider } from '@/context/UserLocationContext';
+import { BusinessContext, BusinessContextProvider } from '@/context/BusinessContext'; // Updated import
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
